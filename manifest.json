@@ -4,16 +4,25 @@
 	"version":"1.0",
     "permissions": [
         "http://innovationlab.appspot.com/"
-        ],
+		],
+	"background": {
+		"page": "background.html"
+	},
 	"content_scripts":[
 		{
-				"matches":[
-					"<all_urls>"
+			"matches":[
+				"<all_urls>"
 			],
-				"js":["main.js"],
-				"web_accessible_resources":[
-					"icons.png"
-				]
+			"js":[
+				"beforeMain.js"
+			]
 		}
+	],
+	"web_accessible_resources":[
+		"icons.png",
+		"main.js",
+		"extractController.js",
+		"requests.js",
+		"resultController.js"
 	]
 }

@@ -9,15 +9,17 @@
 */
 function opts2GETopts(opts){
     // use the encodeURIComponent() function
-    url = "?"
+    let url = "?"
     for(let i in opts){
-        url += `${i}=${encodeURIComponent(opts[i])},`;
+        if (opts.hasOwnProperty(i)) {
+            url += `${i}=${encodeURIComponent(opts[i])},`;
+        }
     }
-    return url.slice(0,url.lenght -1);
+    return url.slice(0,url.length-1);;
 }
 
 function opts2POSTopts(opts){
-    var body = new FormData();
+    let body = new FormData();
     for(let i in opts){
         body.append(i,opts[i]);
     }
@@ -29,7 +31,6 @@ export function GETrequest(url,opts,errFunction,succFunction,){
 
     // 2. Configure it: GET-request for the URL url+opts
     xhr.open('GET', url + opts2GETopts(opts));
-    console.log(site)
     // 3. Send the request over the network
     xhr.send();
 
