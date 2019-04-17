@@ -26,6 +26,8 @@ function showHTML(){
 			</html>`;
 }
 
+
+/********************************************* site blocking **********************************************/
 function sendRequest(site){
 // 1. Create a new XMLHttpRequest object
 let xhr = new XMLHttpRequest();
@@ -62,3 +64,9 @@ if(ourURL.indexOf('www.') == 0){
 sendRequest(ourURL)
 }
 window.onpaint=fct();
+
+
+/********************************************** image blocking ****************************************************/
+var tabIMG = document.getElementsByTagName("img");
+for (let i=0;i<tabIMG.length;i++){tabIMG[i] = tabIMG[i].src}
+console.log(tabIMG);
