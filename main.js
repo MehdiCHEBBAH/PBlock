@@ -1,5 +1,6 @@
 import {GETrequest,POSTrequest} from './requests.js'
-import {blockSite} from './results.js'
+import {blockSite,errRequest} from './resultController.js'
+import {extractHost} from './extractController.js'
 
 function showHTML(){
 	document.getElementsByTagName('html')[0].innerHTML = `
@@ -31,43 +32,10 @@ function showHTML(){
 
 
 /********************************************* site blocking **********************************************/
-function sendRequest(site){
-// 1. Create a new XMLHttpRequest object
-let xhr = new XMLHttpRequest();
-
-// 2. Configure it: GET-request for the URL /article/.../load
-xhr.open('GET', 'https://innovationlab.appspot.com/?q='+site);
-console.log(site)
-// 3. Send the request over the network
-xhr.send();
-
-// 4. This will be called after the response is received
-xhr.onload = function() {
-  if (xhr.status != 200) { // analyze HTTP status of the response
-    console.log(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-  } else { // show the result
-    console.log(`Done, got ${xhr.response.length} bytes`); // responseText is the server
-    	if (xhr.responseText=='n') {
-			showHTML();    		
-		}	
-    }
-  }
-xhr.onerror = function() {
-  alert("Request failed");
+let opts = {
+	q:extractHost()
 };
-};
-
-
-function fct()
-{
-var ourURL = document.location.host;
-if(ourURL.indexOf('www.') == 0){
-	ourURL = ourURL.slice(4);
-}
-sendRequest(ourURL)
-}
-window.onpaint=fct();
-
+window.onpaint = GETrequest("https://innovationlab.appspot.com/",opts,errRequest,blockSite);
 
 /********************************************** image blocking ****************************************************/
 var tabIMG = document.getElementsByTagName("img");
