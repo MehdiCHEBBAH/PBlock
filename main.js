@@ -1,3 +1,6 @@
+import {GETrequest,POSTrequest} from './requests.js'
+import {blockSite} from './results.js'
+
 function showHTML(){
 	document.getElementsByTagName('html')[0].innerHTML = `
 			<!DOCTYPE HTMLPUBLIC"-//W3C//DTDHTML4.01Transitional//EN">

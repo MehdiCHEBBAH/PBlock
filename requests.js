@@ -24,7 +24,7 @@ function opts2POSTopts(opts){
     return body;
 }
 
-function GETrequest(url,opts,errFunction,succFunction,){
+export function GETrequest(url,opts,errFunction,succFunction,){
     var xhr = new XMLHttpRequest();
 
     // 2. Configure it: GET-request for the URL url+opts
@@ -42,7 +42,7 @@ function GETrequest(url,opts,errFunction,succFunction,){
     };
 }
 
-function POSTrequest(url,opts,errFunction,succFunction,){
+export function POSTrequest(url,opts,errFunction,succFunction,){
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
