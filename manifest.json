@@ -11,7 +11,8 @@
 		"http://*/*"
 	],
 	"background": {
-		"page": "background.html"
+		"scripts": ["background.html","events.js"],
+		"persistent": true
 	},
 	"content_scripts":[
 		{
@@ -28,7 +29,7 @@
 		"main.js",
 		"extractController.js",
 		"requests.js",
-		"resultController.js"
-	],
-	"content_security_policy": "script-src 'self' https://poveleceze.pythonanywhere.com/*; object-src 'self'"
+		"resultController.js",
+		"events.js"
+	]
 }
