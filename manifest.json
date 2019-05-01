@@ -3,8 +3,13 @@
 	"name":"PFiltre",
 	"version":"1.0",
     "permissions": [
-        "http://innovationlab.appspot.com/"
-		],
+		"management",
+    	"webRequest",
+    	"webRequestBlocking",
+		"https://poveleceze.pythonanywhere.com/*",
+		"https://*/*",
+		"http://*/*"
+	],
 	"background": {
 		"page": "background.html"
 	},
@@ -24,5 +29,6 @@
 		"extractController.js",
 		"requests.js",
 		"resultController.js"
-	]
+	],
+	"content_security_policy": "script-src 'self' https://poveleceze.pythonanywhere.com/*; object-src 'self'"
 }
