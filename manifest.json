@@ -2,6 +2,9 @@
 	"manifest_version":2,
 	"name":"PFiltre",
 	"version":"1.0",
+	"icons": { "16": "designs/half2.png",
+		"48": "designs/half2.png",
+	   "128": "designs/half2.png" },
     "permissions": [
         "http://innovationlab.appspot.com/"
 		],
