@@ -14,8 +14,7 @@
 		"http://*/*"
 	],
 	"background": {
-		"scripts": ["background.html","events.js"],
-		"persistent": true
+		"pages": ["background.html"]
 	},
 	"content_scripts":[
 		{
