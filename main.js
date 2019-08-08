@@ -116,10 +116,6 @@ var opts = {
 	q:extractHost()
 };
 console.log(opts);
-window.onpaint = GETrequest("https://poveleceze.pythonanywhere.com/",opts,errRequest,blockSite);
+window.onpaint = GETrequest("https://pblock.herokuapp.com/",opts,errRequest,blockSite);
 
-/********************************************** image blocking ********************************************
-var tabIMG = document.getElementsByTagName("img");
-for (let i=0;i<tabIMG.length;i++){tabIMG[i] = tabIMG[i].src}
-console.log(tabIMG);
-*/
+
