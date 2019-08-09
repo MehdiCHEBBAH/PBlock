@@ -1,15 +1,14 @@
 {
 	"manifest_version":2,
-	"name":"PFiltre",
-	"version":"1.0",
+	"name":"PBlock",
+	"version":"0.9",
 	"icons": { "16": "designs/logo16.png",
 		"48": "designs/logo48.png",
 	   "128": "designs/logo256.png" },
     "permissions": [
 		"management",
     	"webRequest",
-    	"webRequestBlocking",
-		"https://poveleceze.pythonanywhere.com/*",
+		"https://PBlock.heroku.com/*",
 		"https://*/*",
 		"http://*/*"
 	],
@@ -25,10 +24,6 @@
 	],
 	"web_accessible_resources":[
 		"icons.png",
-		"main.js",
-		"extractController.js",
-		"requests.js",
-		"resultController.js",
-		"events.js"
+		"main.js"
 	]
 }
